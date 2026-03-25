@@ -13,8 +13,8 @@ const AssignmentLayout = ({ title, id, children }) => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 bg-white text-black min-h-screen">
-      <div className="flex justify-between items-center mb-10 pb-6 border-b-2 border-black">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 min-h-screen">
+      <div className="flex justify-between items-center mb-10 pb-6 border-b-2 border-current">
         <button 
           onClick={handlePrevious} 
           disabled={id === 1}
