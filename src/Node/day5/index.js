@@ -1,26 +1,24 @@
-import dotenv from "dotenv";
-import express from "express";
-import cors from "cors";
-import authRoute from "./routes/authRoutes.js"
+import express from 'express'
+import dotenv from 'dotenv'
+import cors from 'cors'
+import movieRoutes from './routes/movieRoute.js'
+dotenv.config()
+
+const main = express()
 
 
-dotenv.config();
+main.use(cors())
+main.use(express.json())
 
-const app = express();
+main.use('/api/movie',movieRoutes)
 
-
-app.use(cors());
-app.use(express.json())
-
-const PORT = process.env.PORT || 5000;
-app.use("/api/auth",authRoute)
+const PORT  = process.env.PORT || 3000
 
 
 
-app.listen(PORT,()=>{
-    console.log(`Successfully connected server on http://localhost:${PORT}`)
+main.listen(PORT,()=>{
+    console.log(`server running on http://localhost:${PORT}`);
+    
 })
 
-
-
-//http://localhost:5000/api/auth/user
+// http://localhost:5000/api/movie
